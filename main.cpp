@@ -4,23 +4,60 @@
 
 class Lexer {
 private:
-    void number();
-    void word();
-    void operation();
     bool is_space(char c) {
         switch (c) {
             case ' ':
             case '\n':
             case '\r':
+            case '\t':
                 return true;
             default:
                 return false;
         }
     }
+    bool is_number(char c) {
+        switch (c) {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                return true;
+            default:
+                return false;
+        }
+    }
+    bool is_word(char c) {
+        return false;
+    }
+    void number() {
+        std::cout << get();
+    }
+    void word() {
+        get();
+    }
+    void operation() {
+        get();
+    };
+    void analyse() {
+        while (peek() != '\0') {
+            if (is_space(peek())) get();
+            else if (is_number(peek())) number();
+            else if (is_word(peek())) word();
+            else get();
+        }
+    }
 public:
     Lexer(const char* beg) : m_begin{beg} {
-        while (peek() != '\0') std::cout << get();
-        std::cout << *m_begin << std::endl;
+        while (peek() != '\0') {
+            if (is_number(peek())) std::cout << get();
+            else get();
+        }
     }
     const char* m_begin = nullptr;
     char peek() { return *m_begin; }
@@ -29,7 +66,7 @@ public:
 
 int main(){
     // Чтение кода из файла, чтобы во время тестирования не нужно было перекомпилировать
-    std::string instring, line;
+    std::string instring;
     std::fstream infile;
     infile.open("input.txt");
     if (infile.is_open()) {
