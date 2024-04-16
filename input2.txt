@@ -1,0 +1,9 @@
+mas int NAME[5];
+float A1:= 12.12;
+int B_ := input();
+while (A1+B_< 100) {
+    ?Comment example?
+    output(A1);
+    A1:= A1+ B_;
+}
+if (NAME[4] = 10) output(NAME[4]);
