@@ -79,9 +79,8 @@ private:
                 return false;
         }
     }
-    bool is_operator(char c) {
+    bool is_single_char_lexema(char c) {
         switch (c) {
-            case ':':
             case '=':
             case '+':
             case '-':
@@ -93,6 +92,14 @@ private:
             case ']':
             case '{':
             case '}':
+                return true;
+            default:
+                return false;
+        }
+    }
+    bool is_multi_char_lexema(char c) {
+        switch (c) {
+            case ':':
             case '!':
             case '<':
             case '>':
@@ -131,10 +138,6 @@ private:
         }
         std::cout << "Got word: " << word << std::endl;
     }
-    void operation() {
-        std::cout << "Got operation" << std::endl;
-        get();
-    };
     void comment() {
         get();
         std::string comment = "";
@@ -144,13 +147,32 @@ private:
         std::cout << "Got comment: " << comment << std::endl;
         get();
     }
+    void single_char_lexema() {
+        char lexema = get();
+        std::cout << "Got lexema: " << lexema << std::endl;
+    }
+    void multi_char_lexema() {
+        char firstchar = get();
+        std::string lexema; 
+        lexema += firstchar;
+        if (peek() == '=') {
+            lexema += get();
+            std::cout << "Got lexema: " << lexema << std::endl;
+            return;
+        }
+        else if ((firstchar == '<' || firstchar == '>') && (peek() != '=')) {
+            std::cout << "Got lexema: " << lexema << std::endl;
+            return;
+        }
+    }
     void analyse() {
         while (peek() != '\0') {
             if (is_space(peek())) get();
             else if (is_number(peek())) number();
             else if (is_letter(peek())) word();
-            else if (is_operator(peek())) operation();
             else if (peek() == '?') comment();
+            else if (is_single_char_lexema(peek())) single_char_lexema();
+            else if (is_multi_char_lexema(peek())) multi_char_lexema();
             else get();
         }
     }
