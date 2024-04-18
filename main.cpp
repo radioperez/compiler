@@ -36,6 +36,7 @@ private:
     }
     bool is_letter(char c) {
         switch (c) {
+        case '_':
         case 'a':
         case 'b':
         case 'c':
