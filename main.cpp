@@ -6,11 +6,6 @@
 class Lexer {
 private:
     std::vector <std::string> lexemas;
-    Lexer()
-    {
-       lexemas.clear();
-    }
-    
     bool is_space(char c) {
         switch (c) {
         case ' ':
@@ -191,11 +186,11 @@ private:
             get();
             float frac = fraction() + number;
             std::cout << "Got fractial number: " << frac << std::endl;
-            lexemas.push_back("NUM" + std::to_string(frac));
+            lexemas.push_back("NUM " + std::to_string(frac));
             return;
         }
         std::cout << "Got number: " << number << std::endl;
-        lexemas.push_back("NUM" + std::to_string(number));
+        lexemas.push_back("NUM " + std::to_string(number));
     }
     float fraction() {
         float fraction = 0;
@@ -212,7 +207,7 @@ private:
             word += get();
         } 
         std::cout << "Got word: " << word << std::endl;
-        lexemas.push_back("WRD" + word);
+        lexemas.push_back("WRD " + word);
     }
     void comment() {
         get();
@@ -221,7 +216,7 @@ private:
             comment += get();
         }
         std::cout << "Got comment: " << comment << std::endl;
-        lexemas.push_back("COM" + comment);
+        lexemas.push_back("COM " + comment);
         get();
     }
     void single_char_lexema() {
@@ -275,6 +270,7 @@ private:
     }
 public:
     Lexer(const char* beg) : m_begin{ beg } {
+        lexemas.clear();
         bool key=true;
         key =analyse();
         if (key) get_lexemas();
