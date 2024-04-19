@@ -1,5 +1,5 @@
 ﻿  Lexer.cpp
-C:\Users\iranc\source\repos\Lexer\Lexer\Lexer.cpp(307,15): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\iranc\source\repos\Lexer\Lexer\Lexer.cpp(325,10): warning C4101: key: неиспользованная локальная переменная
-C:\Users\iranc\source\repos\Lexer\Lexer\Lexer.cpp(269,1): warning C4715: Lexer::multi_char_lexema: значение возвращается не при всех путях выполнения
+C:\Users\iranc\source\repos\Lexer\Lexer\Lexer.cpp(319,15): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\iranc\source\repos\Lexer\Lexer\Lexer.cpp(337,10): warning C4101: key: неиспользованная локальная переменная
+C:\Users\iranc\source\repos\Lexer\Lexer\Lexer.cpp(281,1): warning C4715: Lexer::multi_char_lexema: значение возвращается не при всех путях выполнения
   Lexer.vcxproj -> C:\Users\iranc\source\repos\Lexer\x64\Debug\Lexer.exe
