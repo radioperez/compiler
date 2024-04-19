@@ -253,19 +253,27 @@ private:
         lexema += firstchar;
         if (peek() == '=') {
             lexema += get();
+            if ((!is_letter(peek())) && (!is_number(peek())) && (peek() != '(')&&(!is_space(peek())))
+            {
+                return false;
+            }
             std::cout << "Got lexema: " << lexema << std::endl;
             lexemas.push_back(lexema);
             return true;
         }
         else if ((firstchar == '<' || firstchar == '>') && (peek() != '=')) {
+            if ((!is_letter(peek())) && (!is_number(peek())) && (peek() != '(')&& (!is_space(peek())))
+            {
+                return false;
+            }
             std::cout << "Got lexema: " << lexema << std::endl;
             lexemas.push_back(lexema);
             return true;
         }
         else if (((firstchar == '!') || (firstchar == ':')) && (peek() != '=')) {
-         //   std::cout << "Unknown lexema: " << lexema << std::endl;
             return false;
         }
+         
     }
     bool analyse() {
         bool key = true;
