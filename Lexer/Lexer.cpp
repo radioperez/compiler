@@ -176,7 +176,8 @@ private:
             return false;
         }
     }
-    void number() {
+    bool number() {
+        bool key = true;
         int number = 0;
         while (is_number(peek())) {
             number *= 10;
@@ -184,13 +185,30 @@ private:
         }
         if (peek() == '.') {
             get();
-            float frac = fraction() + number;
-            std::cout << "Got fractial number: " << frac << std::endl;
-            lexemas.push_back("NUM_" + std::to_string(frac));
-            return;
+            float frac = fraction();
+            if (frac == -1)
+            {
+                key = false;
+                return key;
+            }
+            else {
+                frac += number;
+                std::cout << "Got fractial number: " << frac << std::endl;
+                lexemas.push_back("NUM_" + std::to_string(frac));
+                return key;
+            }
         }
-        std::cout << "Got number: " << number << std::endl;
-        lexemas.push_back("NUM_" + std::to_string(number));
+        else if (is_letter(peek()))
+        {
+            key = false;
+            return key;
+        }
+        
+            std::cout << "Got number: " << number << std::endl;
+            lexemas.push_back("NUM_" + std::to_string(number));
+            return key;
+
+        
     }
     float fraction() {
         float fraction = 0;
@@ -198,6 +216,10 @@ private:
         while (is_number(peek())) {
             power /= 10;
             fraction += (get() - '0') * power;
+        }
+        if (is_letter(peek()))
+        {
+            return -1;
         }
         return fraction;
     }
@@ -241,7 +263,7 @@ private:
             return true;
         }
         else if (((firstchar == '!') || (firstchar == ':')) && (peek() != '=')) {
-            std::cout << "Unknown lexema: " << lexema << std::endl;
+         //   std::cout << "Unknown lexema: " << lexema << std::endl;
             return false;
         }
     }
@@ -249,12 +271,12 @@ private:
         bool key = true;
         while ((peek() != '\0') && (key == true)) {
             if (is_space(peek())) get();
-            else if (is_number(peek())) number();
+            else if (is_number(peek())) key = number();
             else if (is_letter(peek())) word();
             else if (peek() == '?') comment();
             else if (is_single_char_lexema(peek())) single_char_lexema();
             else if (is_multi_char_lexema(peek())) key = multi_char_lexema();
-            else if ((peek() == ';') || (peek() == '.')) {
+            else if (peek() == ';')  {
                 std::string lexema;
                 lexema += peek();
                 lexemas.push_back(lexema);
@@ -262,9 +284,11 @@ private:
             }
             else {
                 key = false;
-                std::cout << "Unknown lexema: " << peek() << std::endl;
+               
             }
-
+            if (!key) {
+                std::cout << "Unknown lexema" << std::endl;
+            }
         }
         return key;
     }
