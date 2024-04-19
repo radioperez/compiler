@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\iranc\\source\\repos\\Lexer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5DE1911A-827F-41A4-B8F6-28B360A9635F}|Lexer\\Lexer.vcxproj|C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5DE1911A-827F-41A4-B8F6-28B360A9635F}|Lexer\\Lexer.vcxproj|solutionrelative:Lexer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5DE1911A-827F-41A4-B8F6-28B360A9635F}|Lexer\\Lexer.vcxproj|C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\Lexer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5DE1911A-827F-41A4-B8F6-28B360A9635F}|Lexer\\Lexer.vcxproj|solutionrelative:Lexer\\Lexer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DE1911A-827F-41A4-B8F6-28B360A9635F}|Lexer\\Lexer.vcxproj|C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5DE1911A-827F-41A4-B8F6-28B360A9635F}|Lexer\\Lexer.vcxproj|solutionrelative:Lexer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 207,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "input.txt",
               "DocumentMoniker": "C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\input.txt",
               "RelativeDocumentMoniker": "Lexer\\input.txt",
               "ToolTip": "C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\input.txt",
               "RelativeToolTip": "Lexer\\input.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-04-19T05:36:33.287Z",
+              "WhenOpened": "2024-04-19T11:56:39.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Lexer.cpp",
               "DocumentMoniker": "C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\Lexer.cpp",
               "RelativeDocumentMoniker": "Lexer\\Lexer.cpp",
               "ToolTip": "C:\\Users\\iranc\\source\\repos\\Lexer\\Lexer\\Lexer.cpp",
               "RelativeToolTip": "Lexer\\Lexer.cpp",
-              "ViewState": "AQIAAAsBAAAAddHxpickwBYBAAAUAAAA",
+              "ViewState": "AQIAADwBAAAAAAAAAAAAABMBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-19T05:36:07.802Z",
+              "WhenOpened": "2024-04-19T11:56:28.845Z",
               "EditorCaption": ""
             }
           ]
