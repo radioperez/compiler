@@ -215,8 +215,8 @@ private:
         while (peek() != '?') {
             comment += get();
         }
-        std::cout << "Got comment: " << comment << std::endl;
-        lexemas.push_back("COM_" + comment);
+        std::cout << "Got comment: " << comment  << std::endl;
+        lexemas.push_back("COM_<" + comment+ ">");
         get();
     }
     void single_char_lexema() {
